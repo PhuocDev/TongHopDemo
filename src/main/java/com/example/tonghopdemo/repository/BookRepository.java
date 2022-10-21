@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
@@ -16,4 +17,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
             "u.author = ?3, u.price = ?4 " +
             " where u.id = ?5")
     void update(String title, String des, String author, double price, Long id);
+
+    Object findByName(String bookName);
+
+
 }

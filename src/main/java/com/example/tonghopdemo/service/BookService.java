@@ -13,6 +13,8 @@ public interface BookService {
 
     void insertBook(Book book);
 
+    Book insertBook2(Book book);
+
     List<Book> searchBookByName(String name);
 
 }

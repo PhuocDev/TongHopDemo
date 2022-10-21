@@ -45,7 +45,11 @@ public class BookServiceImp implements BookService{
     public void insertBook(Book book) {
         bookRepository.save(book);
     }
-
+    @Override
+    public Book insertBook2(Book book) {
+        bookRepository.save(book);
+        return book;
+    }
     @Override
     public List<Book> searchBookByName(String name) {
         return null;
