@@ -63,9 +63,7 @@ public class WebController {
 
     @PostMapping("book/add")
     public ResponseEntity<?> addBook(@RequestBody @Valid Book book) {
-        bookService.insertBook(book);
-        Book checkBookInserted = bookService.getBookById(book.getId());
-        if (checkBookInserted != null) {
+        if (bookService.insertBook(book) != null) {
             return new ResponseEntity<Book>(book, HttpStatus.OK);
         } else {
             APImessages error = new APImessages("Can not insert book: "+ book.getId());
