@@ -1,6 +1,7 @@
 package com.example.tonghopdemo.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
@@ -39,6 +40,13 @@ public class Book {
         this.description = description;
         this.price = price;
         this.dateCreated = new Date();
+    }
+    public Book(String name, String author, String description, double price, Date dateCreated) {
+        this.name = name;
+        this.author = author;
+        this.description = description;
+        this.price = price;
+        this.dateCreated = dateCreated;
     }
 
     public Long getId() {

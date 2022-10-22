@@ -11,12 +11,10 @@ import org.springframework.web.context.request.WebRequest;
 @RestControllerAdvice
 public class ApiExceptionHandler {
 
-
-
     @ResponseBody
     @ExceptionHandler(BookNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String employeeNotFoundHandler(BookNotFoundException ex) {
+    String BookNotFoundHandler(BookNotFoundException ex) {
         return ex.getMessage();
     }
     /**
@@ -28,14 +26,15 @@ public class ApiExceptionHandler {
         return new ErrorMessage(10100, "Đối tượng không tồn tại");
     }
 
-    //danh de xu ly ngoai le cua validation
+    //Catch validation exception
     @ExceptionHandler(BindException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)  // Nếu validate fail thì trả về 400
     public String handleBindException(BindException e) {
-        // Trả về message của lỗi đầu tiên
-        String errorMessage = "Request không hợp lệ";
+        // Trả về message của lỗi cuối cùng
+        String errorMessage = "Request không hợp lệ: " + e.getFieldError().getDefaultMessage();
         if (e.getBindingResult().hasErrors())
             e.getBindingResult().getAllErrors().get(0).getDefaultMessage();
+        //tìm cách get hết error tại đây, có thể dùng foreach
         return errorMessage;
     }
     /**

@@ -11,7 +11,7 @@ public interface BookService {
     void deleteBookById(Long id);
     void updateBook(Long id, Book newBook);
 
-    void insertBook(Book book);
+    Book insertBook(Book book);
 
     List<Book> searchBookByName(String name);
 
