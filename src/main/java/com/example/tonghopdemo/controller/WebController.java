@@ -4,6 +4,7 @@ import com.example.tonghopdemo.entities.Book;
 import com.example.tonghopdemo.exception.APImessages;
 import com.example.tonghopdemo.repository.BookRepository;
 import com.example.tonghopdemo.service.BookService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@Api(value = "Book APIs")
 public class WebController {
     @Autowired
     BookRepository bookRepository;
