@@ -1,7 +1,7 @@
-package com.example.tonghopdemo.service;
+package com.example.tonghopdemo.bookApi.service;
 
-import com.example.tonghopdemo.entities.Book;
-import com.example.tonghopdemo.repository.BookRepository;
+import com.example.tonghopdemo.bookApi.entities.Book;
+import com.example.tonghopdemo.bookApi.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

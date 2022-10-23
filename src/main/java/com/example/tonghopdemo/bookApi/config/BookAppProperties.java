@@ -1,4 +1,4 @@
-package com.example.tonghopdemo.config;
+package com.example.tonghopdemo.bookApi.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,9 +1,9 @@
-package com.example.tonghopdemo.controller;
+package com.example.tonghopdemo.bookApi.controller;
 
-import com.example.tonghopdemo.entities.Book;
+import com.example.tonghopdemo.bookApi.entities.Book;
 import com.example.tonghopdemo.exception.APImessages;
-import com.example.tonghopdemo.repository.BookRepository;
-import com.example.tonghopdemo.service.BookService;
+import com.example.tonghopdemo.bookApi.repository.BookRepository;
+import com.example.tonghopdemo.bookApi.service.BookService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

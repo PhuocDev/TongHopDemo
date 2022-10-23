@@ -1,6 +1,6 @@
-package com.example.tonghopdemo.repository;
+package com.example.tonghopdemo.bookApi.repository;
 
-import com.example.tonghopdemo.entities.Book;
+import com.example.tonghopdemo.bookApi.entities.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
