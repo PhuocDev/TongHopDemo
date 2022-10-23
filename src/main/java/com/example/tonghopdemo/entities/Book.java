@@ -3,6 +3,7 @@ package com.example.tonghopdemo.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -28,7 +29,7 @@ public class Book {
     @Column(name = "price")
     private double price;
 
-    @Column(name = "date_created")
+    @Column(name = "dateCreated")
     private Date dateCreated;
 
     public Book() {
