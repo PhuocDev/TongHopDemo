@@ -1,9 +1,8 @@
-package com.example.tonghopdemo.user;
+package com.example.tonghopdemo.loginAndRegister;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Data

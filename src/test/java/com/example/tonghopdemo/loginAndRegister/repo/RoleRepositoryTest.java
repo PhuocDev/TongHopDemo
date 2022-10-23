@@ -1,18 +1,13 @@
-package com.example.tonghopdemo.user.repo;
+package com.example.tonghopdemo.loginAndRegister.repo;
 
 import com.example.tonghopdemo.App;
-import com.example.tonghopdemo.user.Role;
+import com.example.tonghopdemo.loginAndRegister.Role;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,6 +19,10 @@ import static org.mockito.Mockito.when;
 class RoleRepositoryTest {
     @MockBean
     private RoleRepository roleRepository;
+    @MockBean
+    private UserRepository userRepository;
+//    @MockBean
+//    private User user;
 
     @Test
     public void testCreateRoles() {
@@ -40,5 +39,9 @@ class RoleRepositoryTest {
         );
         int count = roleRepository.findAll().size();
         assertEquals(3, count);
+    }
+    @Test
+    public void testAssignRoleToUser() {
+
     }
 }

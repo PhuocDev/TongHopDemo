@@ -1,11 +1,11 @@
-package com.example.tonghopdemo.user.controller;
+package com.example.tonghopdemo.loginAndRegister.controller;
 
-import com.example.tonghopdemo.user.Role;
-import com.example.tonghopdemo.user.User;
-import com.example.tonghopdemo.user.payload.LoginDto;
-import com.example.tonghopdemo.user.payload.SignUpDto;
-import com.example.tonghopdemo.user.repo.RoleRepository;
-import com.example.tonghopdemo.user.repo.UserRepository;
+import com.example.tonghopdemo.loginAndRegister.Role;
+import com.example.tonghopdemo.loginAndRegister.User;
+import com.example.tonghopdemo.loginAndRegister.payload.LoginDto;
+import com.example.tonghopdemo.loginAndRegister.payload.SignUpDto;
+import com.example.tonghopdemo.loginAndRegister.repo.RoleRepository;
+import com.example.tonghopdemo.loginAndRegister.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
@@ -45,7 +44,7 @@ public class AuthController {
         return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
     }
 
-    @RequestMapping(value = "signup", method = RequestMethod.POST)
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<?> registerUser(@RequestBody SignUpDto signUpDto){
 
         System.out.println(signUpDto.getUsername());
@@ -66,10 +65,7 @@ public class AuthController {
         user.setUsername(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
-        System.out.println(user);
-
         Role roles = roleRepository.findByName("ROLE_ADMIN").get();
-        System.out.println("insert role ok");
         user.setRoles(Collections.singleton(roles));
 
         userRepository.save(user);

@@ -1,8 +1,8 @@
-package com.example.tonghopdemo.user.service;
+package com.example.tonghopdemo.loginAndRegister.service;
 
-import com.example.tonghopdemo.user.Role;
-import com.example.tonghopdemo.user.User;
-import com.example.tonghopdemo.user.repo.UserRepository;
+import com.example.tonghopdemo.loginAndRegister.Role;
+import com.example.tonghopdemo.loginAndRegister.User;
+import com.example.tonghopdemo.loginAndRegister.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -28,7 +28,7 @@ public class WebController {
     }
     @PostConstruct
     public void createDB() {
-        for (int i = 1 ; i < 10 ; i++) {
+        for (int i = 1 ; i < 5 ; i++) {
             Book sampleData = new Book("book" + i, "author" + i, "description is " + i, i*22.500);
             bookService.insertBook(sampleData);
         }

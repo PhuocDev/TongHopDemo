@@ -1,4 +1,4 @@
-package com.example.tonghopdemo.user.payload;
+package com.example.tonghopdemo.loginAndRegister.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

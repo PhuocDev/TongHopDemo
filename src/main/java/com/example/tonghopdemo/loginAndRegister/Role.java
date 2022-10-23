@@ -1,4 +1,4 @@
-package com.example.tonghopdemo.user;
+package com.example.tonghopdemo.loginAndRegister;
 
 import lombok.Getter;
 import lombok.Setter;

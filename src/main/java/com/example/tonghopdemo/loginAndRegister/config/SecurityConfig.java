@@ -1,6 +1,6 @@
-package com.example.tonghopdemo.user.config;
+package com.example.tonghopdemo.loginAndRegister.config;
 
-import com.example.tonghopdemo.user.service.CustomUserDetailsService;
+import com.example.tonghopdemo.loginAndRegister.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
