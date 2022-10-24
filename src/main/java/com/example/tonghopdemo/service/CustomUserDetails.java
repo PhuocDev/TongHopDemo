@@ -1,8 +1,7 @@
-package com.example.tonghopdemo.loginAndRegister;
+package com.example.tonghopdemo.service;
 
-import lombok.AllArgsConstructor;
+import com.example.tonghopdemo.entities.User;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

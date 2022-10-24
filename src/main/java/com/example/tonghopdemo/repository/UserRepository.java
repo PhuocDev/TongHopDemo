@@ -1,6 +1,6 @@
-package com.example.tonghopdemo.loginAndRegister.repo;
+package com.example.tonghopdemo.repository;
 
-import com.example.tonghopdemo.loginAndRegister.User;
+import com.example.tonghopdemo.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

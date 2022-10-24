@@ -1,7 +1,7 @@
-package com.example.tonghopdemo.loginAndRegister.jwt;
+package com.example.tonghopdemo.jwt;
 
-import com.example.tonghopdemo.loginAndRegister.User;
-import com.example.tonghopdemo.loginAndRegister.UserService;
+import com.example.tonghopdemo.entities.User;
+import com.example.tonghopdemo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

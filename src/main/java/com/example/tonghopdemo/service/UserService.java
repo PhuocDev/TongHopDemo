@@ -1,7 +1,8 @@
-package com.example.tonghopdemo.loginAndRegister;
+package com.example.tonghopdemo.service;
 
 
-import com.example.tonghopdemo.loginAndRegister.repo.UserRepository;
+import com.example.tonghopdemo.entities.User;
+import com.example.tonghopdemo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

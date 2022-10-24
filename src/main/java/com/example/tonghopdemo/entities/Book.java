@@ -1,4 +1,4 @@
-package com.example.tonghopdemo.bookApi.entities;
+package com.example.tonghopdemo.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;

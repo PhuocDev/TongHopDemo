@@ -1,6 +1,6 @@
-package com.example.tonghopdemo.bookApi.service;
+package com.example.tonghopdemo.service;
 
-import com.example.tonghopdemo.bookApi.entities.Book;
+import com.example.tonghopdemo.entities.Book;
 
 import java.util.List;
 

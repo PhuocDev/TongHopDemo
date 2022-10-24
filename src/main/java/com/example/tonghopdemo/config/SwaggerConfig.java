@@ -1,4 +1,4 @@
-package com.example.tonghopdemo.bookApi.config;
+package com.example.tonghopdemo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

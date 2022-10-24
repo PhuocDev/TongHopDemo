@@ -1,17 +1,15 @@
-package com.example.tonghopdemo.loginAndRegister.controller;
+package com.example.tonghopdemo.controller;
 
-import com.example.tonghopdemo.loginAndRegister.CustomUserDetails;
-import com.example.tonghopdemo.loginAndRegister.Role;
-import com.example.tonghopdemo.loginAndRegister.User;
-import com.example.tonghopdemo.loginAndRegister.jwt.JwtTokenUtil;
-import com.example.tonghopdemo.loginAndRegister.payload.LoginDto;
-import com.example.tonghopdemo.loginAndRegister.payload.SignUpDto;
-import com.example.tonghopdemo.loginAndRegister.repo.RoleRepository;
-import com.example.tonghopdemo.loginAndRegister.repo.UserRepository;
+import com.example.tonghopdemo.entities.Role;
+import com.example.tonghopdemo.entities.User;
+import com.example.tonghopdemo.jwt.JwtTokenUtil;
+import com.example.tonghopdemo.entities.payload.LoginDto;
+import com.example.tonghopdemo.entities.payload.SignUpDto;
+import com.example.tonghopdemo.repository.RoleRepository;
+import com.example.tonghopdemo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

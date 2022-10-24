@@ -1,15 +1,13 @@
-package com.example.tonghopdemo.loginAndRegister.jwt;
+package com.example.tonghopdemo.jwt;
 
-import com.example.tonghopdemo.loginAndRegister.CustomUserDetails;
-import com.example.tonghopdemo.loginAndRegister.User;
+import com.example.tonghopdemo.service.CustomUserDetails;
+import com.example.tonghopdemo.entities.User;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
-import static javax.crypto.Cipher.SECRET_KEY;
 
 @Component
 public class JwtTokenUtil {

@@ -1,7 +1,9 @@
 package com.example.tonghopdemo.loginAndRegister.repo;
 
 import com.example.tonghopdemo.App;
-import com.example.tonghopdemo.loginAndRegister.Role;
+import com.example.tonghopdemo.entities.Role;
+import com.example.tonghopdemo.repository.RoleRepository;
+import com.example.tonghopdemo.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
