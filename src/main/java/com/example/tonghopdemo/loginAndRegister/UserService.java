@@ -25,6 +25,6 @@ public class UserService implements UserDetailsService {
 //        return (UserDetails) userRepository.findById(userId).get();
 //    }
     public void save(User user) {
-        userRepository.save(user);
+        userRepository.saveAndFlush(user);
     }
 }
