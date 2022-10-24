@@ -1,0 +1,40 @@
+CREATE database tonghopdemo
+GO
+use tonghopdemo
+
+CREATE table book(
+    id int not null PRIMARY key,
+    name varchar(50),
+    author varchar(50),
+    description varchar(500),
+    price FLOAT,
+    dateCreated varchar(50)
+)
+
+SELECT * from book
+delete from book
+where id > 40
+
+create table users (
+    id int PRIMARY key not null,
+    email varchar(200),
+    name varchar(100),
+    password varchar(100),
+    username varchar(100)
+)
+create table roles (
+    id int PRIMARY KEY not null,
+    name varchar(50)
+)
+CREATE table user_roles(
+    user_id int FOREIGN key REFERENCES users (id),
+    role_id int FOREIGN key REFERENCES roles (id)
+)
+insert into roles values (0, 'ROLE_ADMIN')
+insert into roles values (1, 'ROLE_USER')
+
+DROP TABLE user_roles
+DROP TABLE roles
+
+SELECT * from roles
+SELECT * from users
