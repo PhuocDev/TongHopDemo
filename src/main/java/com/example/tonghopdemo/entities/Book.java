@@ -9,9 +9,9 @@ import java.util.Date;
 @Entity
 @Table(name="book")
 public class Book {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "name")
@@ -31,6 +31,10 @@ public class Book {
 
     @Column(name = "dateCreated")
     private Date dateCreated;
+
+    public Book(Long id) {
+        this.id = id;
+    }
 
     public Book() {
         this.dateCreated = new Date();

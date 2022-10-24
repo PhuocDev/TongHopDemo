@@ -40,7 +40,13 @@ public class AuthController {
     private RoleRepository roleRepository;
 
 
-
+    //Tài khoản đăng nhập
+    /*
+        {
+            "usernameOrEmail":"admin2",
+            "password":"admin2"
+        }
+     */
     @PostMapping("/login")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
         System.out.println(loginDto);
@@ -81,7 +87,8 @@ public class AuthController {
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
         String role = "";
 
-        //Cú pháp tạm thời để đúng định dạng của role
+        //Cú pháp tạm thời để đúng định dạng của role,
+        // vai trò của role này chỉ do admin đăng kí
         if (signUpDto.getRole().equals("ROLE_ADMIN")) {
             role = "ROLE_ADMIN";
         } else {
@@ -99,6 +106,7 @@ public class AuthController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/admin")
     public ResponseEntity<?> showAdminPage() {
+        //demo role authorization bằng Annotation
         return new ResponseEntity<>("Only admin can see this", HttpStatus.OK);
     }
     @RolesAllowed({"ROLE_USER"})
