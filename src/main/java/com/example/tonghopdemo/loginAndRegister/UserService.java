@@ -1,5 +1,7 @@
-package com.example.tonghopdemo.userJwt;
+package com.example.tonghopdemo.loginAndRegister;
 
+
+import com.example.tonghopdemo.loginAndRegister.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,13 +15,13 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findUserByUsername(username);
+        User user = userRepository.findByUsername(username).get();
         if (user == null) {
             throw new UsernameNotFoundException(username);
         } else return new CustomUserDetails(user);
     }
 
-//    public UserDetails loadUserById(Long userId) {
+    //    public UserDetails loadUserById(Long userId) {
 //        return (UserDetails) userRepository.findById(userId).get();
 //    }
     public void save(User user) {

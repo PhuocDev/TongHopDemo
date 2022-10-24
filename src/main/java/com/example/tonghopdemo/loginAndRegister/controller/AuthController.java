@@ -1,7 +1,9 @@
 package com.example.tonghopdemo.loginAndRegister.controller;
 
+import com.example.tonghopdemo.loginAndRegister.CustomUserDetails;
 import com.example.tonghopdemo.loginAndRegister.Role;
 import com.example.tonghopdemo.loginAndRegister.User;
+import com.example.tonghopdemo.loginAndRegister.jwt.JwtTokenUtil;
 import com.example.tonghopdemo.loginAndRegister.payload.LoginDto;
 import com.example.tonghopdemo.loginAndRegister.payload.SignUpDto;
 import com.example.tonghopdemo.loginAndRegister.repo.RoleRepository;
@@ -22,7 +24,13 @@ import java.util.Collections;
 @RequestMapping("/api/auth")
 public class AuthController {
     @Autowired
-    private AuthenticationManager authenticationManager;
+    AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JwtTokenUtil tokenProvider;
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     @Autowired
     private UserRepository userRepository;
@@ -30,18 +38,23 @@ public class AuthController {
     @Autowired
     private RoleRepository roleRepository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+
 
     @PostMapping("/login")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
         System.out.println(loginDto);
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                loginDto.getUsernameOrEmail(), loginDto.getPassword()));
-
-        //when login success
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        loginDto.getUsernameOrEmail(),
+                        loginDto.getPassword()
+                )
+        );
+        // Nếu không xảy ra exception tức là thông tin hợp lệ
+        // Set thông tin authentication vào Security Context
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        return new ResponseEntity<>("User signed-in successfully!.", HttpStatus.OK);
+        // Trả về jwt cho người dùng.
+        String jwt = tokenProvider.generateAccessToken(userRepository.findByUsername(loginDto.getUsernameOrEmail()).get());
+        return new ResponseEntity<>("Login successfully! Token: " + jwt, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
