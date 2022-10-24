@@ -43,7 +43,7 @@ public class BookServiceImp implements BookService{
 
     @Override
     public Book insertBook(Book book) {
-        bookRepository.save(book);
+        bookRepository.saveAndFlush(book);
         return book;
     }
 
