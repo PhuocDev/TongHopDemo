@@ -13,7 +13,8 @@ CREATE table book(
 
 SELECT * from book
 delete from book
-where id > 40
+where id > 10
+
 
 create table users (
     id int PRIMARY key not null,
